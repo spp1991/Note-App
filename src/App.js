@@ -28,6 +28,10 @@ getNotes = () => {
   
 }
 
+getNote = () => {
+  console.log("clicked");
+}
+
   render(){
     const {showNote, notes} = this.state;
 
@@ -37,8 +41,9 @@ getNotes = () => {
         { showNote? 
             <Note /> : 
             <List  
-              getNotes={ this.getNotes}
+              getNotes={ this.getNotes }
               notes = { notes }
+              getNote= { this.getNote }
             />
         }
         
