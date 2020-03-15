@@ -21,6 +21,7 @@ class App extends Component {
     this.setState({ 
       showNote : !this.state.showNote,
       note: {},
+      newTag: false,
     });
   }
 
