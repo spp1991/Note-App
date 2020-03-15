@@ -35,6 +35,9 @@ getNote = (id) => {
   .catch((err) => console.log(err.response.data))
 }
 
+submitNote = (data) => {
+  console.log(data);
+}
   render(){
     const {showNote, notes, note} = this.state;
 
@@ -43,7 +46,8 @@ getNote = (id) => {
         <Nav toggleNote = { this.toggleNote} showNote = { showNote }/>
         { showNote? 
             <Note 
-            note= {note}
+              note= {note}
+              submitNote={this.submitNote}
             /> 
             : 
             <List  

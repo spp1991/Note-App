@@ -4,11 +4,11 @@ class Note extends React.Component{
 
     onSubmit(e){
         e.preventDefault();
-        const formdata={
+        const formData={
             title:this.title.value,
             content:this.content.value,
         };
-        console.log(formdata);
+        this.props.submitNote(formData);
     }
 
     render(){
