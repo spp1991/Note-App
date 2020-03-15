@@ -38,7 +38,6 @@ class Note extends React.Component{
                 return(
                     <form 
                         onSubmit={(e) => this.onTagSubmit(e)}
-                        onClick={ () => closeTagForm()}
                     >
                         <input
                             className="tag-input"
@@ -70,7 +69,11 @@ class Note extends React.Component{
         const { note, closeTagForm } = this.props;
         return(
             <div className="note-container">
-                <form className="note-form" onSubmit={(e)=> this.onSubmit(e)}>
+                <form 
+                    className="note-form" 
+                    onSubmit={(e)=> this.onSubmit(e)}
+                    onClick={ () => closeTagForm()}
+                >
                     <input
                         className="note-title-input"
                         type="text"
