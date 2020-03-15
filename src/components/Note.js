@@ -12,12 +12,30 @@ class Note extends React.Component{
     }
 
     renderTagForm() {
-        return (
-            <span>
-                Tag Your Note:
-                <i className="tag-button material-icons">add circle</i>
-            </span>
-        );
+        if(!this.props.newTag){
+            return (
+                <span>
+                    Tag Your Note:
+                    <i 
+                        className="tag-button material-icons"
+                        onClick= {() => this.props.showTagForm()}
+                    >
+                        add circle
+                    </i>
+                </span>
+            );
+        }  else{
+            return(
+                <form>
+                    <input
+                        className="tag-input"
+                        type="text"
+                        placeholder="Tag Name.."
+                    />
+                </form>
+            );
+        }
+        
     }
 
     render(){
